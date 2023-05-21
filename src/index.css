@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer {
+  /* class to animate accordion expand animation */
+  .expanded-view {
+    @apply transition-all duration-300 ease-in h-fit overflow-hidden opacity-100 pt-2;
+  }
+
+  /* class to animate accordion collapse animation */
+  .collapsed-view {
+    @apply transition-all duration-300 ease-in-out h-0 overflow-hidden opacity-0;
+  }
+
+  .expanded-icon {
+    @apply transform transition-all duration-300 ease-in-out rotate-180;
+  }
+
+  .collapsed-icon {
+    @apply transform transition-all duration-300 ease-in-out rotate-0;
+  }
+}
