@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/static/css/main.5291e377.css",
+    "main.js": "/static/js/main.5ffee482.js",
+    "static/js/787.2863c14c.chunk.js": "/static/js/787.2863c14c.chunk.js",
+    "static/media/eye-crossed.svg": "/static/media/eye-crossed.20d87c4324cab2aaf5b0a78ef0025563.svg",
+    "static/media/duplicate.svg": "/static/media/duplicate.66d1c80a5f1785d6510c74032ea265c6.svg",
+    "static/media/checkbox.svg": "/static/media/checkbox.265dbfb6f24f33ab9e4aea49b094823d.svg",
+    "static/media/eye.svg": "/static/media/eye.227eccb889f3f256243cab5857539f2a.svg",
+    "index.html": "/index.html",
+    "static/media/square-plus.svg": "/static/media/square-plus.656c52ad703666908535822cb4afee03.svg",
+    "static/media/square.svg": "/static/media/square.f765c412bc164cc7f00332d9b2bc0eef.svg",
+    "static/media/square-minus.svg": "/static/media/square-minus.a4f52b0a070d4921fcaac655f293ff4d.svg",
+    "static/media/ic-angle-down.svg": "/static/media/ic-angle-down.972490916fc53237a0569c03a10d44cb.svg",
+    "main.5291e377.css.map": "/static/css/main.5291e377.css.map",
+    "main.5ffee482.js.map": "/static/js/main.5ffee482.js.map",
+    "787.2863c14c.chunk.js.map": "/static/js/787.2863c14c.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.5291e377.css",
+    "static/js/main.5ffee482.js"
+  ]
+}
