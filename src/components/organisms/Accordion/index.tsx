@@ -24,7 +24,7 @@ export const Accordion = (props: any) => {
                         {props.title}
                     </div>
                     <div>
-                        The Doctype is HTML5 and is at the top of all your HTML pages.
+                        {props.item?.description}
                     </div>
                 </div>
 
