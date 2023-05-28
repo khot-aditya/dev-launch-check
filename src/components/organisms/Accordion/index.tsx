@@ -47,9 +47,9 @@ export const Accordion = (props: AccordionProps) => {
 
                 {
                     (item.code || item.documentation || item.tools) &&
-                    <div className='pl-10 pb-10'>
+                    <div className='pl-10 pb-5'>
                         {
-                            item.code !== "" || item.code !== null && <div className="mockup-code border bg-white text-primary-content max-w-fit pr-20 shadow-xl my-10 ">
+                            item.code && <div className="mockup-code border bg-white text-primary-content max-w-fit pr-20 shadow-xl my-10 ">
                                 <CodeView code={item.code} />
                             </div>
                         }
@@ -92,7 +92,7 @@ export const Accordion = (props: AccordionProps) => {
 
                 {
                     item.meta &&
-                    <div className='flex gap-2'>
+                    <div className='flex gap-2 mt-5'>
                         {
                             item.meta.tags?.map((tag, index) => (
                                 <span key={index} className="badge badge-outline px-4 py-3 uppercase">{tag}</span>
