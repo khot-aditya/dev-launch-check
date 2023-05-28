@@ -1,6 +1,6 @@
 {
-  "name": "frontend-check-list",
-  "version": "0.1.0",
+  "name": "dev-launch-check",
+  "version": "1.0.2",
   "homepage": "https://devlaunchcheck.website/",
   "private": true,
   "dependencies": {
