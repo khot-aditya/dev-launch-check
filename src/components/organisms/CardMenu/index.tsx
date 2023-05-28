@@ -17,7 +17,7 @@ export const MenuCard = () => {
             <div className='card-body p-0 pt-5 flex flex-col gap-5'>
 
                 <div>
-                    <ProgressBar/>
+                    <ProgressBar progress={10} />
                 </div>
                 <div>
                     <PriorityBadges />

@@ -10,8 +10,14 @@ import { ReactComponent as ExpandIcon } from '../../../assets/square-plus.svg';
 import { ReactComponent as CollapseIcon } from '../../../assets/square-minus.svg';
 import { ProgressBar } from '../../molecules/ProgressBar';
 import { PriorityBadges } from '../../molecules/PriorityBadge';
+import { SectionInterface } from '../../../list';
 
-export const Section = (props: any) => {
+
+interface SectionProps {
+    item: SectionInterface;
+    children: React.ReactNode;
+}
+export const Section = (props: SectionProps) => {
     return (
         <div className='bg-white p-5 card card-bordered'>
             <div className='flex justify-between items-center'>
@@ -20,7 +26,7 @@ export const Section = (props: any) => {
 
                     <div className='flex justify-between w-full'>
 
-                        <h1 className='text-3xl font-bold'>{props.title}</h1>
+                        <h1 className='text-3xl font-bold' id={`${props.item.title}`}>{props.item.title}</h1>
 
                         <div className='flex gap-2'>
                             <label className="swap btn btn-active btn-md btn-circle">
@@ -43,7 +49,7 @@ export const Section = (props: any) => {
 
                     <div className='flex gap-2 mt-5 items-center'>
                         <div className='w-full max-w-xs'>
-                            <ProgressBar />
+                            <ProgressBar progress={props.item.meta.progress}/>
                         </div>
                         <PriorityBadges />
                     </div>

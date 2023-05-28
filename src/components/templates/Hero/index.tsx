@@ -5,10 +5,10 @@ export const HeroSection = () => {
     return (
         <section className="text-gray-600 body-font min-h-screen flex justify-center items-center">
             <div className="container mx-auto flex flex-col px-5 py-24 justify-center items-center h-full">
-                <img className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600" />
+                {/* <img className="lg:w-2/6 md:w-3/6 w-5/6 mb-10 object-cover object-center rounded" alt="hero" src="https://dummyimage.com/720x600" /> */}
                 {/* <iframe src="https://giphy.com/embed/nqtCrUwM148ZVKQtlu" width="380" height="260" frameBorder="0" className="giphy-embed" allowFullScreen></iframe><p><a href="https://giphy.com/gifs/bublywater-check-it-out-bubl-michael-nqtCrUwM148ZVKQtlu">via GIPHY</a></p> */}
-                <div className="w-full md:w-2/3 flex flex-col mb-16 items-center text-center h-full">
-                    <h1 className="title-font sm:text-4xl text-3xl mb-4 font-medium text-gray-900">
+                <div className="w-full md:w-2/3 flex flex-col mb-16 items-center text-center h-full ">
+                    <h1 className="title-font sm:text-5xl font-bold text-3xl mb-4  text-gray-900">
                         Web Frontend Checklist Template
                     </h1>
                     <p className="mb-8 leading-relaxed">

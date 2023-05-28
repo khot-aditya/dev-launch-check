@@ -22,9 +22,51 @@ export const TAGS = {
   WEB_FONT: "web font",
 };
 
-export const dataArray = [
+export interface DocumentationInterface {
+  title: string;
+  source: string;
+}
+
+export interface ToolsInterface {
+  title: string;
+  source: string;
+}
+
+export interface MetaInterface {
+  isChecked: boolean;
+  isHidden: boolean;
+  priority: number;
+  tags: Array<string>;
+}
+
+export interface ChecklistInterface {
+  title: string;
+  description: string;
+  longDescription?: string;
+  code: string | null;
+  meta: MetaInterface;
+  documentation: Array<DocumentationInterface> | null;
+  tools: Array<ToolsInterface> | null;
+}
+
+export interface SectionInterface {
+  title: string;
+  content: Array<ChecklistInterface>;
+  meta: {
+    isVisible: boolean;
+    isExpanded: boolean;
+    progress: number;
+  }
+}
+
+export const dataArray: SectionInterface[] = [
   {
     title: "Head",
+    meta: {
+      isVisible: true,
+      isExpanded: true,
+      progress: 0,
+    },
     content: [
       {
         title: "Doctype",
@@ -44,7 +86,7 @@ export const dataArray = [
           {
             title: "Determining the character encoding - HTML5 W3C",
             source:
-              "https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding?ref=frontendchecklist",
+              "https://www.w3.org/TR/html5/syntax.html#determining-the-character-encoding?ref=devlaunchcheck",
           },
         ],
         tools: null,
@@ -100,14 +142,14 @@ export const dataArray = [
           {
             title: "Title - HTML - MDN",
             source:
-              "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title?ref=frontendchecklist",
+              "https://developer.mozilla.org/en-US/docs/Web/HTML/Element/title?ref=devlaunchcheck",
           },
         ],
         tools: [
           {
             title: "SERP Snippet Generator",
             source:
-              "https://www.sistrix.com/serp-snippet-generator/?ref=frontendchecklist",
+              "https://www.sistrix.com/serp-snippet-generator/?ref=devlaunchcheck",
           },
         ],
       },
@@ -129,7 +171,7 @@ export const dataArray = [
           {
             title: "Meta Description - HTML - MDN",
             source:
-              "https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#Adding_an_author_and_description?ref=frontendchecklist",
+              "https://developer.mozilla.org/en-US/docs/Learn/HTML/Introduction_to_HTML/The_head_metadata_in_HTML#Adding_an_author_and_description?ref=devlaunchcheck",
           },
         ],
         tools: null,
@@ -155,28 +197,28 @@ export const dataArray = [
           {
             title: "Favicon Cheat Sheet",
             source:
-              "https://github.com/audreyr/favicon-cheat-sheet?ref=frontendchecklist",
+              "https://github.com/audreyr/favicon-cheat-sheet?ref=devlaunchcheck",
           },
           {
             title:
               "Favicons, Touch Icons, Tile Icons, etc. Which Do You Need? - CSS Tricks",
             source:
-              "https://css-tricks.com/favicon-quiz/?ref=frontendchecklist",
+              "https://css-tricks.com/favicon-quiz/?ref=devlaunchcheck",
           },
           {
             title: "PNG favicons - caniuse",
             source:
-              "https://caniuse.com/#feat=link-icon-png?ref=frontendchecklist",
+              "https://caniuse.com/#feat=link-icon-png?ref=devlaunchcheck",
           },
         ],
         tools: [
           {
             title: "Favicon Generator",
-            source: "https://www.favicon-generator.org/?ref=frontendchecklist",
+            source: "https://www.favicon-generator.org/?ref=devlaunchcheck",
           },
           {
             title: "RealFaviconGenerator",
-            source: "https://realfavicongenerator.net/?ref=frontendchecklist",
+            source: "https://realfavicongenerator.net/?ref=devlaunchcheck",
           },
         ],
       },
@@ -204,12 +246,12 @@ export const dataArray = [
           {
             title: "Configuring Web Applications",
             source:
-              "https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html?ref=frontendchecklist",
+              "https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariWebContent/ConfiguringWebApplications/ConfiguringWebApplications.html?ref=devlaunchcheck",
           },
           {
             title: "Supported Meta Tags",
             source:
-              "https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html?ref=frontendchecklist",
+              "https://developer.apple.com/library/content/documentation/AppleApplications/Reference/SafariHTMLRef/Articles/MetaTags.html?ref=devlaunchcheck",
           },
         ],
         tools: null,
@@ -231,7 +273,7 @@ export const dataArray = [
           {
             title: "Browser configuration schema reference",
             source:
-              "https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx?ref=frontendchecklist",
+              "https://msdn.microsoft.com/en-us/library/dn320426(v=vs.85).aspx?ref=devlaunchcheck",
           },
         ],
         tools: null,
@@ -253,13 +295,13 @@ export const dataArray = [
           {
             title: "Use canonical URLs - Search Console Help - Google Support",
             source:
-              "https://support.google.com/webmasters/answer/139066?hl=en?ref=frontendchecklist",
+              "https://support.google.com/webmasters/answer/139066?hl=en?ref=devlaunchcheck",
           },
           {
             title:
               "5 common mistakes with rel=canonical - Google Webmaster Blog",
             source:
-              "https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html?ref=frontendchecklist",
+              "https://webmasters.googleblog.com/2013/04/5-common-mistakes-with-relcanonical.html?ref=devlaunchcheck",
           },
         ],
         tools: null,
@@ -323,7 +365,7 @@ export const dataArray = [
             title:
               "About conditional comments (Internet Explorer) - MSDN - Microsoft",
             source:
-              "https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx?ref=frontendchecklist",
+              "https://msdn.microsoft.com/en-us/library/ms537512(v=vs.85).aspx?ref=devlaunchcheck",
           },
         ],
         tools: null,
@@ -365,7 +407,7 @@ export const dataArray = [
           {
             title: "Critical by Addy Osmani on GitHub automates this.",
             source:
-              "https://github.com/addyosmani/critical?ref=frontendchecklist",
+              "https://github.com/addyosmani/critical?ref=devlaunchcheck",
           },
         ],
         tools: null,
@@ -385,7 +427,8 @@ export const dataArray = [
         tools: null,
       },
       {
-        title: "Facebook Open Graph:",
+        title: "Facebook Open Graph",
+        description: "",
         longDescription:
           "All Facebook Open Graph (OG) are tested and no one is missing or with a false information. Images need to be at least 600 x 315 pixels, although 1200 x 630 pixels is recommended. Using og:image:width and og:image:height will specify the image dimensions to the crawler so that it can render the image immediately without having to asynchronously download and process it.",
         code: null,
@@ -399,19 +442,19 @@ export const dataArray = [
           {
             title: "A Guide to Sharing for Webmasters",
             source:
-              "https://developers.facebook.com/docs/sharing/webmasters/?ref=frontendchecklist",
+              "https://developers.facebook.com/docs/sharing/webmasters/?ref=devlaunchcheck",
           },
           {
             title: "Best Practices - Sharing",
             source:
-              "https://developers.facebook.com/docs/sharing/best-practices/?ref=frontendchecklist",
+              "https://developers.facebook.com/docs/sharing/best-practices/?ref=devlaunchcheck",
           },
         ],
         tools: [
           {
             title: "Test your page with the Facebook OG testing",
             source:
-              "https://developers.facebook.com/tools/debug/?ref=frontendchecklist",
+              "https://developers.facebook.com/tools/debug/?ref=devlaunchcheck",
           },
         ],
       },
@@ -429,14 +472,14 @@ export const dataArray = [
           {
             title: "Getting started with cards — Twitter Developers",
             source:
-              "https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started?ref=frontendchecklist",
+              "https://developer.twitter.com/en/docs/tweets/optimize-with-cards/guides/getting-started?ref=devlaunchcheck",
           },
         ],
         tools: [
           {
             title: "Test your page with the Twitter card validator",
             source:
-              "https://cards-dev.twitter.com/validator?ref=frontendchecklist",
+              "https://cards-dev.twitter.com/validator?ref=devlaunchcheck",
           },
         ],
       },
@@ -444,6 +487,11 @@ export const dataArray = [
   },
   {
     title: "HTML",
+    meta: {
+      isVisible: true,
+      isExpanded: false,
+      progress: 0,
+    },
     content: [
       {
         title: "HTML5 Semantic Elements",
@@ -462,7 +510,7 @@ export const dataArray = [
         tools: [
           {
             title: "HTML Reference",
-            source: "http://htmlreference.io/?ref=frontendchecklist",
+            source: "http://htmlreference.io/?ref=devlaunchcheck",
           },
         ],
       },
@@ -522,7 +570,7 @@ export const dataArray = [
         tools: [
           {
             title: "W3C validator",
-            source: "https://validator.w3.org/?ref=frontendchecklist",
+            source: "https://validator.w3.org/?ref=devlaunchcheck",
           },
         ],
       },
@@ -541,11 +589,11 @@ export const dataArray = [
         tools: [
           {
             title: "Dirty markup",
-            source: "https://dirtymarkup.com/?ref=frontendchecklist",
+            source: "https://dirtymarkup.com/?ref=devlaunchcheck",
           },
           {
             title: "webhint",
-            source: "https://webhint.io/?ref=frontendchecklist",
+            source: "https://webhint.io/?ref=devlaunchcheck",
           },
         ],
       },
@@ -564,7 +612,7 @@ export const dataArray = [
         tools: [
           {
             title: "W3C Link Checker",
-            source: "https://validator.w3.org/checklink?ref=frontendchecklist",
+            source: "https://validator.w3.org/checklink?ref=devlaunchcheck",
           },
         ],
       },
@@ -591,6 +639,11 @@ export const dataArray = [
   },
   {
     title: "web fonts",
+    meta: {
+      isVisible: true,
+      isExpanded: false,
+      progress: 0,
+    },
     content: [
       {
         title: "Webfont format",
@@ -606,20 +659,20 @@ export const dataArray = [
         documentation: [
           {
             title: "WOFF - Web Open Font Format - Caniuse",
-            source: "https://caniuse.com/#feat=woff?ref=frontendchecklist",
+            source: "https://caniuse.com/#feat=woff?ref=devlaunchcheck",
           },
           {
             title: "WOFF 2.0 - Web Open Font Format - Caniuse",
-            source: "https://caniuse.com/#feat=woff2?ref=frontendchecklist",
+            source: "https://caniuse.com/#feat=woff2?ref=devlaunchcheck",
           },
           {
             title: "TTF/OTF - TrueType and OpenType font support",
-            source: "https://caniuse.com/#feat=ttf?ref=frontendchecklist",
+            source: "https://caniuse.com/#feat=ttf?ref=devlaunchcheck",
           },
           {
             title: "Using @font-face - CSS-Tricks",
             source:
-              "https://css-tricks.com/snippets/css/using-font-face/?ref=frontendchecklist",
+              "https://css-tricks.com/snippets/css/using-font-face/?ref=devlaunchcheck",
           },
         ],
         tools: null,
@@ -652,7 +705,7 @@ export const dataArray = [
           {
             title: "Typekit Web Font Loader",
             source:
-              "https://github.com/typekit/webfontloader?ref=frontendchecklist",
+              "https://github.com/typekit/webfontloader?ref=devlaunchcheck",
           },
         ],
         tools: null,
@@ -661,6 +714,11 @@ export const dataArray = [
   },
   {
     title: "CSS",
+    meta: {
+      isVisible: true,
+      isExpanded: false,
+      progress: 0,
+    },
     content: [
       {
         title: "Responsive Web Design",
@@ -898,6 +956,11 @@ export const dataArray = [
   },
   {
     title: "javascript",
+    meta: {
+      isVisible: true,
+      isExpanded: false,
+      progress: 0,
+    },
     content: [
       {
         title: "JavaScript Inline",
@@ -941,7 +1004,7 @@ export const dataArray = [
         tools: null,
       },
       {
-        title: "JavaScript security:",
+        title: "JavaScript security",
         description: "",
         code: null,
         meta: {
@@ -982,7 +1045,7 @@ export const dataArray = [
         tools: null,
       },
       {
-        title: "Modernizer",
+        title: "Modernizr",
         description:
           "If you need to target some specific features you can use a custom Modernizr to add classes in your <html> tag.",
         code: null,
@@ -1013,6 +1076,11 @@ export const dataArray = [
   },
   {
     title: "Images",
+    meta: {
+      isVisible: true,
+      isExpanded: false,
+      progress: 0,
+    },
     content: [
       {
         title: "Optimization",
@@ -1116,6 +1184,11 @@ export const dataArray = [
   },
   {
     title: "Accessibility",
+    meta: {
+      isVisible: true,
+      isExpanded: false,
+      progress: 0,
+    },
     content: [
       {
         title: "Progressive enhancement",
@@ -1261,6 +1334,11 @@ export const dataArray = [
   },
   {
     title: "Performance",
+    meta: {
+      isVisible: true,
+      isExpanded: false,
+      progress: 0,
+    },
     content: [
       {
         title: "Page weight",
@@ -1403,6 +1481,11 @@ export const dataArray = [
   },
   {
     title: "SEO",
+    meta: {
+      isVisible: true,
+      isExpanded: false,
+      progress: 0,
+    },
     content: [
       {
         title: "Google Analytics",
